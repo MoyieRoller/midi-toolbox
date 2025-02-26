@@ -1,3 +1,5 @@
+import input_handler
+
 def midi_to_frequency(pitch: int):
     freq = 440 * (2**((pitch - 69) / 12))
     return freq

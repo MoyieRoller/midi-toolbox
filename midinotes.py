@@ -1,14 +1,14 @@
 """Kleine MIDI-Toolbox"""
 
 if __name__ == '__main__':
-    # Vorschlag 1        # Akkord
+    # Vorschlag 1
     my_pitches = [60, 62, [64, 59, 53], 65, 67, 67]
     my_durations = [1/4, 1/4, 1/4, 1/4, 1/2, 1/2]
 
     # Vorschlag 2
     my_sequence = [{'p': 60, 'd': 1/4},
                    {'p': 62, 'd': 1/4},
-                   {'p': [64, 59, 53], 'd': 1/4}, # Akkord
+                   {'p': [64, 59, 53], 'd': 1/4},
                    {'p': 65, 'd': 1/4},
                    {'p': 67, 'd': 1/4},
                    {'p': 67, 'd': 1/4}]
