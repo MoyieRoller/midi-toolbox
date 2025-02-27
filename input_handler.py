@@ -2,6 +2,7 @@
 
 import asyncio
 import sys
+from typing import Union
 
 valid_durations = (0.0625, 0.125, 0.25, 0.5, 1.0)
 break_loop = False
@@ -13,7 +14,7 @@ if __name__ == '__main__':
     durations = []
     duration_needed = True
 
-def input_pitch(message: str) -> int | list:
+def input_pitch(message: str) -> Union[int, list]:
     """ User-Eingabe für die Tonhöhe in Form einer Midi-Note zwischen 0 und 127.
 
     Parameters:
