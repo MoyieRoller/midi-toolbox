@@ -62,8 +62,8 @@ for pitch in pitches:
             frequency = round_frequency(frequency)
             chord.append(f'{frequency} Hz')
             stringified_chord = str(chord).replace("'", "")
-        print(f'{pitch} = {stringified_chord}')
+        print(f'{pitch:>3} = {stringified_chord}')
     else: # einzelne Note
         frequency = midi_to_frequency(pitch)
         frequency = round_frequency(frequency)
-        print(f'{pitch} = {frequency} Hz')
+        print(f'{pitch:>3} = {frequency} Hz')
