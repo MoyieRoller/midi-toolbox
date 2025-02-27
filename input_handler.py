@@ -13,7 +13,16 @@ if __name__ == '__main__':
     durations = []
     duration_needed = True
 
-def input_pitch(message: str) -> int:
+def input_pitch(message: str) -> int | list:
+    """ User-Eingabe für die Tonhöhe in Form einer Midi-Note zwischen 0 und 127.
+
+    Parameters:
+    message (str): Im Terminal angezeigte Nachricht, die zur Eingabe einer Midi-Note oder eines Akkords auffordert.
+
+    Returns:
+    int: Validierte Midi-Note als Ganzzahl im Bereich 0 bis 127.
+    list: Validierter Akkord mit folgender Syntax: [note1, note2,...] als Liste von Tonhöhen.
+    """
     while True:
         userInput = input(message)
 
@@ -44,6 +53,15 @@ def input_pitch(message: str) -> int:
                 return userInput
 
 def input_duration(message: str) -> float:
+    """ User-Eingabe für die zur Midi-Tonhöhe zugehörige Dauer des Tons. Zur Vereinfachung, werden nur Ganze
+    bis Sechzehntel-Noten akzeptiert.
+
+    Parameters:
+    message (str): Im Terminal angezeigte Nachrichte, die zur Eingabe einer Dauer auffordert.
+
+    Returns:
+    float: Dauer des Tons/Akkords als einer von folgenden floats: 0.625, 0.125, 0.25, 0.5 und 1.0.
+    """
     while True:
         userInput = input(message)
 
@@ -65,6 +83,14 @@ def input_duration(message: str) -> float:
             return userInput
 
 def chord_validation(userInput: str) -> list:
+    """Validiert den Inhalt eines eingegebenen Akkords auf korrekte Midi-Tonhöhen.
+
+    Parameters:
+    userInput (str): User-Eingabe, solange diese mit '[' beginnt und mit ']' endet.
+
+    Returns:
+    list: Gibt den Akkord 
+    """
     chord = []
     try:
         stripped_input = userInput.strip('[]')
@@ -77,7 +103,7 @@ def chord_validation(userInput: str) -> list:
             else:
                 chord.append(single_note)
     except ValueError:
-        print('ERROR: Not a valid midi note within the chord, only numbers between 0 and 127 accepted!')
+        print('ERROR: Not a valid midi note within the chord, only numbers between 0 and 127 seperated by commas accepted!')
     else:
         return chord
 
@@ -91,5 +117,4 @@ if __name__ == '__main__':
                 durations.append(duration)
         else:
             break
-
     print(pitches, durations)
