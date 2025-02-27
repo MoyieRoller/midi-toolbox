@@ -55,7 +55,7 @@ def round_frequency(freq: float) -> str:
         return '%.4f'%(freq)
 
 for pitch in pitches:
-    if type(pitch) == list: """ Akkord """
+    if type(pitch) == list: # Akkord
         chord = []
         for note in pitch:
             frequency = midi_to_frequency(note)
@@ -63,7 +63,7 @@ for pitch in pitches:
             chord.append(f'{frequency} Hz')
             stringified_chord = str(chord).replace("'", "")
         print(f'{pitch} = {stringified_chord}')
-    else: """ einzelne Note """
+    else: # einzelne Note
         frequency = midi_to_frequency(pitch)
         frequency = round_frequency(frequency)
         print(f'{pitch} = {frequency} Hz')
