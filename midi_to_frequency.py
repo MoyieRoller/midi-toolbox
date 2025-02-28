@@ -1,7 +1,9 @@
+"""Umwandlung von Midi-Tonhöhen in Frequenz"""
+
 import input_handler
 
 pitches = []
-frequencies = []
+max_pitch_length = 0
 
 def midi_to_frequency(pitch: int) -> float:
     """Rechnet eine Midi-Note in die jeweilige Frequenz um.
@@ -23,6 +25,9 @@ def get_valid_inputs() -> list:
     """
     while True:
         pitch = input_handler.input_pitch('Please enter a valid midi note or chord, press [enter] to stop the input: ')
+        global max_pitch_length
+        if len(str(pitch)) > max_pitch_length and pitch != None:
+            max_pitch_length = len(str(pitch))
         if not input_handler.break_loop:
             pitches.append(pitch)
         else:
@@ -62,8 +67,8 @@ for pitch in pitches:
             frequency = round_frequency(frequency)
             chord.append(f'{frequency} Hz')
             stringified_chord = str(chord).replace("'", "")
-        print(f'{pitch:>3} = {stringified_chord}')
+        print(f'{str(pitch):>{max_pitch_length}} = {stringified_chord}')
     else: # einzelne Note
         frequency = midi_to_frequency(pitch)
         frequency = round_frequency(frequency)
-        print(f'{pitch:>3} = {frequency} Hz')
+        print(f'{pitch:>{max_pitch_length}} = {frequency} Hz')
