@@ -4,7 +4,7 @@ import asyncio
 import sys
 from typing import Union
 
-valid_durations = (0.0625, 0.125, 0.25, 0.5, 1.0)
+valid_durations = (0.0625, 0.125, 0.25, 0.5, 1.0) # Tuple mit zugelassenen Tondauern
 break_loop = False
 
 if __name__ == '__main__':
@@ -27,20 +27,22 @@ def input_pitch(message: str) -> Union[int, list]:
     while True:
         userInput = input(message)
 
+        # Eingabe beenden
         if userInput.lower() == '':
             global break_loop
             break_loop = True
             break
         
+        # Programm beenden
         if userInput == 'exit':
             print('Exiting midi-toolbox...')
             sys.exit(0)
 
-        if userInput.startswith('[') and userInput.endswith(']'):
+        if userInput.startswith('[') and userInput.endswith(']'): # Akkord
             chord = chord_validation(userInput)
             if chord != None:
                 return chord
-        elif userInput.startswith('[') and not userInput.endswith(']'):
+        elif userInput.startswith('[') and not userInput.endswith(']'): # unvollständiger Akkord
             print('ERROR: Not a chord in the correct format [note1, note2,...]!')
             continue
         else:
@@ -66,10 +68,12 @@ def input_duration(message: str) -> float:
     while True:
         userInput = input(message)
 
+        # kein Beenden der Eingabe möglich, jede Tonhöhe braucht auch eine Dauer
         if userInput.lower() == '':
             print('WARNING: You need to enter a duration for the last midi note or chord!')
             continue
 
+        # Programm beenden
         if userInput == 'exit':
             print('Exiting midi-toolbox...')
             sys.exit(0)
@@ -110,11 +114,11 @@ def chord_validation(userInput: str) -> list:
 
 if __name__ == '__main__':
     while True:
-        pitch = input_pitch('Please enter a valid midi note or chord, press enter to stop the input: ')
+        pitch = input_pitch("Please enter a valid midi note or chord.\nPress [enter] to start the calculation. Type 'exit' to stop the program: ")
         if not break_loop:
             pitches.append(pitch)
             if duration_needed:
-                duration = input_duration('Please enter a valid duration, only sixteenth to whole notes accepted: ')
+                duration = input_duration("Please enter a valid duration, only sixteenth to whole notes accepted.\nType 'exit' to stop the program: ")
                 durations.append(duration)
         else:
             break
