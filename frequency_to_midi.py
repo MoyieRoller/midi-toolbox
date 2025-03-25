@@ -3,7 +3,6 @@
 import math
 import sys
 import input_handler
-import numpy as np
 from typing import Union
 
 frequencies = []
