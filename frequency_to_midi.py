@@ -82,7 +82,6 @@ def format_frequencies(frequencies: list) -> list:
     new_frequencies_stringified = str(new_frequencies).replace("'", "")
     return(new_frequencies_stringified)
         
-
 frequencies = get_valid_inputs()
 
 # maximale Wortlänge vor dem "=" anpassen, für output-Formatierung

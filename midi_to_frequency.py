@@ -34,8 +34,6 @@ def get_valid_inputs() -> list:
             break
     return pitches
 
-pitches = get_valid_inputs()
-
 def round_frequency(freq: float) -> str:
     """Rundet die berechneten Frequenzen auf unterschiedliche Nachkommastellen, sodass für jede Frequenz
     genau fünf Ziffern verwendet werden. Es wurde explizit nicht round() verwendet, da bei bspw. 3.145 noch
@@ -58,6 +56,8 @@ def round_frequency(freq: float) -> str:
         return '%.0f'%(freq)
     else:
         return '%.4f'%(freq)
+
+pitches = get_valid_inputs()
 
 for pitch in pitches:
     if type(pitch) == list: # Akkord
