@@ -10,7 +10,7 @@ The midi-toolbox is very easy to use. At the moment, you just need to run `pytho
 ### functions
 - [x] midi to frequency / frequency to midi
 - [x] midi to pitch class
-- [ ] **WIP** get octave
+- [x] get octave
 - [ ] generate scale
 - [ ] **WIP** generate chords
 - [ ] **WIP** transpose
