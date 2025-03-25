@@ -9,11 +9,11 @@ The midi-toolbox is very easy to use. At the moment, you just need to run `pytho
 
 ### functions
 - [x] midi to frequency / frequency to midi
-- [ ] midi to pitch class
-- [ ] get octave
+- [x] midi to pitch class
+- [ ] **WIP** get octave
 - [ ] generate scale
-- [ ] generate chords
-- [ ] transpose
+- [ ] **WIP** generate chords
+- [ ] **WIP** transpose
 - [ ] arpeggiate
 - [ ] invert
 - [ ] scale timing
