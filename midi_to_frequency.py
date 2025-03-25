@@ -24,7 +24,7 @@ def get_valid_inputs() -> list:
     list: Eine Liste mit Midi-Noten oder Akkorden (Liste mit Tönen innerhalb der Liste).
     """
     while True:
-        pitch = input_handler.input_pitch("Please enter a valid midi note or chord.\nPress [enter] to the calculation. Type 'exit' to stop the program: ")
+        pitch = input_handler.input_pitch("Please enter a valid midi note or chord.\nPress [enter] to start the calculation. Type 'exit' to stop the program: ")
         global max_pitch_length
         if len(str(pitch)) > max_pitch_length and pitch != None:
             max_pitch_length = len(str(pitch))
