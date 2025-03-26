@@ -11,7 +11,6 @@ def midi_to_pitch_class(pitch: int) -> str:
     return pitch_class
 
 def get_valid_inputs() -> list:
-
     while True:
         pitch = input_handler.input_pitch("Please enter a valid midi note or chord.\nPress [enter] to start the calculation. Type 'exit' to stop the program: ")
         global max_pitch_length
