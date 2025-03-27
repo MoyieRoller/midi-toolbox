@@ -8,6 +8,7 @@ from typing import Union
 frequencies = []
 break_loop = False
 max_freq_length = 0.0
+contains_chord = False
 
 def input_frequency(message: str) -> Union[int, list]:
     while True:
@@ -93,12 +94,16 @@ for freq in frequencies:
 
 for freq in frequencies:
     if type(freq) == list: # Akkord
+        contains_chord = True
         chord = []
         for note in freq:
             pitch = frequency_to_midi(note)
             chord.append(str(pitch))
             stringified_chord = str(chord).replace("'", "")
         print(f'{format_frequencies(freq):>{max_freq_length}} = {stringified_chord}')
-    else: # einzelne Note
+    elif contains_chord == True:
         pitch = frequency_to_midi(freq)
         print(f'{freq:>{max_freq_length - 3}} Hz = {pitch}')
+    else: # einzelne Note
+        pitch = frequency_to_midi(freq)
+        print(f'{freq:>{max_freq_length}} Hz = {pitch}')
