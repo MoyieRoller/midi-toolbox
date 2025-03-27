@@ -3,7 +3,7 @@
 import input_handler
 
 pitches = []
-pitch_classes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'B#']
+pitch_classes = ('C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B')
 max_pitch_length = 0
 
 def midi_to_pitch_class(pitch: int) -> str:

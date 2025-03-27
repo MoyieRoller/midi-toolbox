@@ -1,4 +1,4 @@
-"""Umwandlung von Midi-Tonhöhen in Frequenz"""
+"""Umrechnung von MIDI-Noten in Hertz"""
 
 import input_handler
 

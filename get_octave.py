@@ -3,7 +3,7 @@
 import input_handler
 
 pitches = []
-octaves = ['not defined', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'not defined']
+octaves = ('not defined', '0', '1', '2', '3', '4', '5', '6', '7', '8', 'not defined')
 max_pitch_length = 0
 
 def get_octave(pitch: int) -> str:
