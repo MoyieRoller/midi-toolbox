@@ -12,11 +12,11 @@ The midi-toolbox is very easy to use. At the moment, you just need to run `pytho
 - [x] midi to pitch class
 - [x] get octave
 - [ ] generate scale
-- [ ] **WIP** generate chords
-- [ ] **WIP** transpose
+- [ ] generate chords
+- [x] transpose
 - [ ] arpeggiate
 - [ ] invert
 - [ ] scale timing
 - [ ] count midi notes
-- [ ] get subsequent interval
+- [x] get subsequent interval
 - [ ] count intervals
