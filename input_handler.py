@@ -94,7 +94,7 @@ def chord_validation(userInput: str) -> list:
     userInput (str): User-Eingabe, solange diese mit '[' beginnt und mit ']' endet.
 
     Returns:
-    list: Gibt den Akkord 
+    list: Gibt den Akkord zurück.
     """
     chord = []
     try:

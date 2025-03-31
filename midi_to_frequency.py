@@ -6,7 +6,7 @@ pitches = []
 max_pitch_length = 0
 
 def midi_to_frequency(pitch: int) -> float:
-    """Rechnet eine Midi-Note in die jeweilige Frequenz um.
+    """Rechnet eine MIDI-Note in die jeweilige Frequenz um.
 
     Parameters:
     pitch (int): Die MIDI-Tonhöhe der Noten.
@@ -18,10 +18,10 @@ def midi_to_frequency(pitch: int) -> float:
     return freq
 
 def get_valid_inputs() -> list:
-    """Schleife um die Eingabe von Midi-Noten oder Akkorden zu ermöglichen.
+    """Schleife um die Eingabe von MIDI-Noten oder Akkorden zu ermöglichen.
 
     Returns:
-    list: Eine Liste mit Midi-Noten oder Akkorden (Liste mit Tönen innerhalb der Liste).
+    list: Eine Liste mit MIDI-Noten oder Akkorden (Liste mit Tönen innerhalb der Liste).
     """
     while True:
         pitch = input_handler.input_pitch("Please enter a valid midi note or chord.\nPress [enter] to start the calculation. Type 'exit' to stop the program: ")
@@ -40,7 +40,7 @@ def round_frequency(freq: float) -> str:
     nicht aufgerundet wird.
 
     Parameters:
-    frequency (float): Frequenz der jeweiligen Midi-Note in Hz.
+    frequency (float): Frequenz der jeweiligen MIDI-Note in Hz.
 
     Returns:
     str: Gerundete Frequenz als string, damit in der Ausgabe auch alle gewünschten Nachkommstellen erscheinen,
